@@ -51,15 +51,6 @@ export default function Home() {
     setDark(true);
     document.documentElement.classList.add("dark");
     localStorage.setItem(localName, "dark");
-    //如果是深色模式
-    // if (dark) {
-    //   setDark(false);
-    //   document.documentElement.classList.remove("dark");
-    // } else {
-    //   setDark(true);
-    //   document.documentElement.classList.add("dark");
-    // }
-    console.log("主题更改");
   };
   const changeThemeSys = (): void => {
     setDark(false);
@@ -85,8 +76,8 @@ export default function Home() {
                 </a>
               </div>
               <div className="nav-item mx-2 text-sm">
-                <a href="#" className="home-nav">
-                  文章
+                <a href="/archive" className="home-nav">
+                  归档
                 </a>
               </div>
               <div className="nav-item mx-2 text-sm">
