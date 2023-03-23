@@ -122,7 +122,6 @@ export default function Home() {
                     onClick={changeThemeSys}
                   >
                     <svg
-                      t="1679557952656"
                       className="icon cursor-pointer"
                       viewBox="0 0 1024 1024"
                       version="1.1"
@@ -144,7 +143,6 @@ export default function Home() {
                     onClick={changeThemeDark}
                   >
                     <svg
-                      t="1679557923583"
                       className="icon cursor-pointer"
                       viewBox="0 0 1024 1024"
                       version="1.1"
@@ -183,7 +181,6 @@ export default function Home() {
             <section className="max-w-3xl px-5 mx-auto section">
               <div className="flex items-center content-title my-5 ">
                 <svg
-                  t="1679535500983"
                   className="w-8 h-8 icon"
                   viewBox="0 0 1024 1024"
                   version="1.1"
@@ -262,7 +259,6 @@ export default function Home() {
           <div className="flex items-center links my-5 sm:my-0 ">
             {/* 邮箱 */}
             <svg
-              t="1679541431977"
               className="icon cursor-pointer hover:scale-125 transition-all "
               viewBox="0 0 1024 1024"
               version="1.1"
@@ -294,7 +290,6 @@ export default function Home() {
             </svg>
             {/* QQ */}
             <svg
-              t="1679541360239"
               className="ml-2 icon cursor-pointer hover:scale-125 transition-all"
               viewBox="0 0 1024 1024"
               version="1.1"
