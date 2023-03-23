@@ -66,7 +66,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 头部 */}
-      <header className="fixed top-0 left-0 z-10 w-full bg-white header transition-all dark:bg-gray-800 dark:text-white">
+      <header className="fixed top-0 left-0 z-10 w-full text-gray-900 bg-white header transition-all dark:bg-gray-800 dark:text-white">
         <div className="px-5 nav-wrapper">
           <nav className="flex items-center justify-between px-5 mx-auto max-w-3xl h-14">
             <div className="navbar flex justify-center">
@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </header>
       {/* 主体 */}
-      <div className=" pb-8 main-container bg-gray-50 dark:bg-gray-900 transition-all dark:text-white">
+      <div className=" pb-8 main-container bg-gray-50 text-gray-900 dark:bg-gray-900 transition-all dark:text-white">
         <main className="h-full main overflow-y-hidden">
           <header className="relative mb-5 h-halfvh animate__fadeInDown animate__animated">
             <div className="absolute w-full h-full header-cover cover-bg opacity-80 dark:opacity-10">
