@@ -47,6 +47,19 @@ const articles = [
 export default function Home() {
   const [dark, setDark] = useState(false);
   const localName = "cz-theme";
+
+  useEffect(() => {
+    if (
+      localStorage.getItem(localName) == "dark" ||
+      localName in localStorage
+    ) {
+      setDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   const changeThemeDark = (): void => {
     setDark(true);
     document.documentElement.classList.add("dark");
@@ -66,26 +79,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 头部 */}
-      <header className="fixed top-0 left-0 z-10 w-full text-gray-900 bg-white header transition-all dark:bg-gray-800 dark:text-white">
+      <header className="fixed top-0 left-0 z-10 w-full text-gray-900 transition-all bg-white header dark:bg-gray-800 dark:text-white">
         <div className="px-5 nav-wrapper">
-          <nav className="flex items-center justify-between px-5 mx-auto max-w-3xl h-14">
-            <div className="navbar flex justify-center">
-              <div className="nav-item mx-2 text-sm">
+          <nav className="flex items-center justify-between max-w-3xl px-5 mx-auto h-14">
+            <div className="flex justify-center navbar">
+              <div className="mx-2 text-sm nav-item">
                 <a href="#" className="home-nav">
                   首页
                 </a>
               </div>
-              <div className="nav-item mx-2 text-sm">
+              <div className="mx-2 text-sm nav-item">
                 <a href="/archive" className="home-nav">
                   归档
                 </a>
               </div>
-              <div className="nav-item mx-2 text-sm">
+              <div className="mx-2 text-sm nav-item">
                 <a href="#" className="home-nav">
                   随笔
                 </a>
               </div>
-              <div className="nav-item mx-2 text-sm">
+              <div className="mx-2 text-sm nav-item">
                 <a href="#" className="home-nav">
                   关于
                 </a>
@@ -93,14 +106,14 @@ export default function Home() {
             </div>
             <div className="nav-tools">
               {/* 深色模式 */}
-              <div className="dark-wrapper flex justify-center">
+              <div className="flex justify-center dark-wrapper">
                 {dark ? (
                   <div
-                    className="sun flex justify-center items-center w-12 h-12 transition-all rounded-full text-center active:bg-slate-400"
+                    className="flex items-center justify-center w-12 h-12 text-center transition-all rounded-full sun active:bg-slate-400"
                     onClick={changeThemeSys}
                   >
                     <svg
-                      className="icon cursor-pointer"
+                      className="cursor-pointer icon"
                       viewBox="0 0 1024 1024"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -117,11 +130,11 @@ export default function Home() {
                   </div>
                 ) : (
                   <div
-                    className="moon flex justify-center items-center w-12 h-12 transition-all rounded-full text-center active:bg-slate-400"
+                    className="flex items-center justify-center w-12 h-12 text-center transition-all rounded-full moon active:bg-slate-400"
                     onClick={changeThemeDark}
                   >
                     <svg
-                      className="icon cursor-pointer"
+                      className="cursor-pointer icon"
                       viewBox="0 0 1024 1024"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -143,8 +156,8 @@ export default function Home() {
         </div>
       </header>
       {/* 主体 */}
-      <div className=" pb-8 main-container bg-gray-50 text-gray-900 dark:bg-gray-900 transition-all dark:text-white">
-        <main className="h-full main overflow-y-hidden">
+      <div className="pb-8 text-gray-900 transition-all main-container bg-gray-50 dark:bg-gray-900 dark:text-white">
+        <main className="h-full overflow-y-hidden main">
           <header className="relative mb-5 h-halfvh animate__fadeInDown animate__animated">
             <div className="absolute w-full h-full header-cover cover-bg opacity-80 dark:opacity-10">
               <Image
@@ -155,9 +168,9 @@ export default function Home() {
               />
             </div>
           </header>
-          <div className="container mx-auto animate__fadeInUp  animate__animated ">
+          <div className="container mx-auto animate__fadeInUp animate__animated ">
             <section className="max-w-3xl px-5 mx-auto section">
-              <div className="flex items-center content-title my-5 ">
+              <div className="flex items-center my-5 content-title ">
                 <svg
                   className="w-8 h-8 icon"
                   viewBox="0 0 1024 1024"
@@ -203,7 +216,7 @@ export default function Home() {
                 {articles.map((item) => (
                   <div
                     key={item.id}
-                    className="flex justify-between p-2 my-4 cursor-pointer overflow-hidden transition-all dark:bg-gray-800 bg-white  rounded hover:shadow item"
+                    className="flex justify-between p-2 my-4 overflow-hidden transition-all bg-white rounded cursor-pointer dark:bg-gray-800 hover:shadow item"
                   >
                     {/* {item.title} */}
                     <div className="flex items-center justify-center overflow-hidden rounded-full min-w-max min-h-max article-img">
@@ -232,12 +245,12 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <footer className="p-5 py-8 bg-white dark:bg-gray-800 transition-all shadow-md footer">
-        <div className="flex items-center flex-col mb-5 sm:px-5 justify-between sm:flex-row max-w-3xl mx-auto footer-content">
-          <div className="flex items-center links my-5 sm:my-0 ">
+      <footer className="p-5 py-8 transition-all bg-white shadow-md dark:bg-gray-800 footer">
+        <div className="flex flex-col items-center justify-between max-w-3xl mx-auto mb-5 sm:px-5 sm:flex-row footer-content">
+          <div className="flex items-center my-5 links sm:my-0 ">
             {/* 邮箱 */}
             <svg
-              className="icon cursor-pointer hover:scale-125 transition-all "
+              className="transition-all cursor-pointer icon hover:scale-125 "
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -268,7 +281,7 @@ export default function Home() {
             </svg>
             {/* QQ */}
             <svg
-              className="ml-2 icon cursor-pointer hover:scale-125 transition-all"
+              className="ml-2 transition-all cursor-pointer icon hover:scale-125"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"

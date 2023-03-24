@@ -1,5 +1,5 @@
 import React from "react";
 
-export const archive = () => {
+export default function archive() {
   return <div>文章归档</div>;
-};
+}
