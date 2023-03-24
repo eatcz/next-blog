@@ -6,6 +6,9 @@ module.exports = {
   darkMode: 'class', // or 'class'
   theme: {
     extend:{
+      minWidth:{
+        min:'368px'
+      },
       height:{
         halfvh:'50vh'
       },
