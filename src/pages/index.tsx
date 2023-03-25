@@ -5,10 +5,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Cover from "@/components/cover";
 import List from "@/components/lists";
-// import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 import "animate.css";
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const bg = "@/assets/imgs/cover-bg.webp";
@@ -29,7 +27,7 @@ export default function Home() {
         <Header />
         {/* 主体 */}
         {/* <div className="pb-8 text-gray-900 transition-all main-container bg-gray-50 dark:bg-gray-900 dark:text-white"> */}
-        <Cover bg={bg} />
+        <Cover />
         <List />
         {/* </div> */}
         <Footer />

@@ -1,4 +1,32 @@
+import Link from "next/link";
+import { useEffect, useState } from "react";
 const Nav = () => {
+  const [dark, setDark] = useState(false);
+  const localName = "cz-theme";
+
+  useEffect(() => {
+    if (
+      localStorage.getItem(localName) == "dark" ||
+      localName in localStorage
+    ) {
+      setDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const changeThemeDark = (): void => {
+    setDark(true);
+    document.documentElement.classList.add("dark");
+    localStorage.setItem(localName, "dark");
+  };
+  const changeThemeSys = (): void => {
+    setDark(false);
+    document.documentElement.classList.remove("dark");
+    localStorage.removeItem(localName);
+  };
+
   return (
     <nav className="flex items-center justify-between max-w-3xl px-5 mx-auto h-14">
       <div className="flex justify-center navbar">
