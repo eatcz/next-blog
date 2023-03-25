@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import profilePic from "../assets/imgs/cover-bg.webp";
+import profilePic from "@/assets/imgs/preview.gif";
 export default function Cover() {
   return (
     <header className="relative mb-5 h-halfvh animate__fadeInDown animate__animated">
